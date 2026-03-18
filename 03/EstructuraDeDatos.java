@@ -291,12 +291,35 @@ public class EstructuraDeDatos{
  
         break;
         case 7:
+        //quiero dejarles una tabla de multiplicar
+        for(int n = 1; n <= 10; n++){
+            System.out.println("    |   " + n + "    |      " + (n*10 + "    |   " + (n * 100) + "   |   " + (n * 1000 + "  |   ")));
+        }
             
         break;
         case 8:
             
         break;
         case 9:
+        //vamos a realizar un cuadraro magico
+        System.out.println("Vamos a realizar de dibujo de un cuadrado magico");
+        System.out.println("Ingrese el tamaño del cuadrado");
+
+        int n1 = entrada.nextInt();
+
+        if(n1 >= 1 && n1 <= 20 ){
+            //se repite
+            for(int i = 1; i >= n1; i++){
+                //recorro las columnas
+                for(int j = 1; j >= n1; j++){
+                    System.out.print(" * ");
+                }
+                System.out.println("");
+            }
+
+        }else{
+            System.out.println("por favor ingrese solo valores entre el 1 y el 20");
+        }
             
         break;
         case 10:
