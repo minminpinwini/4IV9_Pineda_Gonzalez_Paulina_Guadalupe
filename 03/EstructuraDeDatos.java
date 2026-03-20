@@ -8,7 +8,7 @@ Vamos a crear 14 programas dentro de un menu gigante para poner a prueba sus con
 6- Desarrollar un programa para calcular el area y perimetro de 5 diferentes figuras 
 7- Desarrollar una tabla
 8- Desarrollar un proograma para calcular un factorial con recursividad
-9- Vamos a hacer dinujitos 
+9- Vamos a hacer dibujitos 
 10- Desarrolar una figura hueca
 11- Realizar algunos patrones 
 12- Realizar un diamante
@@ -33,7 +33,7 @@ public class EstructuraDeDatos{
 
     System.out.println("Bienvenido a aeste programa para ver cuanto saben programar a partir de algoritmos ");
 
-    System.out.println("1- Desarrollar un prgrama para calcular el boo de un descuento por edad");
+    System.out.println("1- Desarrollar un prgrama para calcular el bono de un descuento por edad");
     System.out.println("2- Convertir numeros de decimales a binarios ");
     System.out.println("3-Convertir temperaturas entre los principales grados c -> F y K ");
     System.out.println("4- Realizar un nuevo programa para contar numeros de positivos a negativos de una serie de numeros");
@@ -41,7 +41,7 @@ public class EstructuraDeDatos{
     System.out.println("6- Desarrollar un programa para calcular el area y perimetro de 5 diferentes figuras");
     System.out.println("7- Desarrollar una tabla");
     System.out.println("8- Desarrollar un proograma para calcular un factorial con recursividad");
-    System.out.println("9- Vamos a hacer dinujitos ");
+    System.out.println("9- Vamos a hacer dibujitos ");
     System.out.println("10- Desarrolar una figura hueca");
     System.out.println("11- Realizar algunos patrones ");
     System.out.println("12- Realizar un diamante");
@@ -241,7 +241,7 @@ public class EstructuraDeDatos{
                 altura = entrada.nextFloat();
 
                 area = base * altura;
-                perimetro = 2 + (base + altura);
+                perimetro = 2 * (base + altura);
 
               }else if (figura == 3){
                 System.out.println("ingrese la base ");
@@ -254,7 +254,7 @@ public class EstructuraDeDatos{
 
                 System.out.println("Ingresa lado 2 ");
                 float lado2 = 0;
-                lado2 = entrada.nextInt();
+                lado2 = entrada.nextFloat();
 
                 System.out.println("Ingresa lado 3");
                 float lado3 = 0;
@@ -292,12 +292,25 @@ public class EstructuraDeDatos{
         break;
         case 7:
         //quiero dejarles una tabla de multiplicar
-        for(int n = 1; n <= 10; n++){
-            System.out.println("    |   " + n + "    |      " + (n*10 + "    |   " + (n * 100) + "   |   " + (n * 1000 + "  |   ")));
-        }
-            
+                //deberan de darle formato y titulos a cada columna
+                System.out.println("   =======================================");
+                System.out.println("   |   1   |   10   |   100  |    1000   | ");
+                System.out.println("   =======================================");
+                for(int n = 1; n <= 10; n++){
+                    System.out.println( "   |   " + n + "   |   " + (n*10) + "   |   " + (n*100) + "  |  " + (n*1000) + "   | ");
+                }
         break;
         case 8:
+        System.out.println("Ingrese un numereo para calcular su factorial");
+        int numfactorial = entrada.nextInt();
+
+        if(numfactorial >= 0){
+            int resultadofactorial = factorial(numfactorial);
+            System.out.println("el factorial es: " + resultadofactorial);
+        }else{
+            System.out.println("Ingrese solo numeros positivos plis");
+        }
+
             
         break;
         case 9:
@@ -307,44 +320,149 @@ public class EstructuraDeDatos{
 
         int n1 = entrada.nextInt();
 
-        if(n1 >= 1 && n1 <= 20 ){
-            //se repite
-            for(int i = 1; i >= n1; i++){
-                //recorro las columnas
-                for(int j = 1; j >= n1; j++){
-                    System.out.print(" * ");
-                }
-                System.out.println("");
+    if(n1 >= 1 && n1 <= 20 ){
+        for(int i = 1; i <= n1; i++){
+            for(int j = 1; j <= n1; j++){
+                System.out.print(" * ");
             }
-
+            System.out.println("");
+        }
         }else{
             System.out.println("por favor ingrese solo valores entre el 1 y el 20");
         }
             
         break;
         case 10:
+        System.out.println("Ingrese el tamaño de la figura hueca");
+
+        int tam = entrada.nextInt();
+        if(tam >= 1 && tam <= 20){
+            for(int i = 1; i<= tam; i++){
+                for(int j = 1; j <= tam; j++){
+                    if(i == 1 || i == tam || j == 1 || j == tam){
+                        System.out.print("* ");
+
+                    }else{
+                        System.out.print("  ");
+                    }
+                }
+                System.out.println("");
+            }
+        }else{
+            System.out.println("Ingrese valores entre 1 y 20");
+        }
             
         break;
         case 11:
+        System.out.println("Ingrese el tamaño del patron");
+        int patron = entrada.nextInt();
+
+        if(patron >= 1 && patron <= 20){
+            for(int i = 1; i <= patron; i++){
+            for(int j = 1; j <= i; j++){
+                System.out.print(" * ");
+
+            }
+            System.out.println("");
+
+            }
+        }else{
+            System.out.println("Ingrese valores entre 1 y 20");
+        }
             
         break;
         case 12:
+            System.out.println("ingrese el tamaño del diamante");
+            int diamante = entrada.nextInt();
+
+            if(diamante >= 1 && diamante <=20){
+
+                for(int i = 1; i <= diamante; i++){
+                    for(int j = diamante; j > i; j-- ){
+                        System.out.print(" ");
+
+                    }
+                    for(int k = 1; k <= (2*i -1); k++){
+                        System.out.print("*");
+                    }
+                    System.out.println("");
+                }
+                for(int i = diamante-1; i >= 1; i--){
+                    for(int j = diamante; j > i; j--){
+                        System.out.print(" ");
+
+                    }
+                    for(int k = 1; k <= (2*i -1); k++){
+                        System.out.print("*");
+                    }
+                    System.out.println("");
+                    }
+
+                }else{
+                    System.out.println("Ingrese valores entre 1 y 20");
+                }
             
         break;
         case 13:
-            
+            System.out.println("Ingrese el primer numero");
+            float num1 = entrada.nextFloat();
+
+            System.out.println("Ingrese el segundo numero");
+            float num2 = entrada.nextFloat();
+
+            System.out.println("Seleccione la operacion ");
+            System.out.println("1. Suma");
+            System.out.println("2. Resta");
+            System.out.println("3. Multiplicacion");
+            System.out.println("4. Divicion");
+
+            int operation = entrada.nextInt();
+
+            float resultadofinal = 0;
+
+            if(operation == 1){
+                resultadofinal = num1 + num2;
+
+            }else if(operation == 2){
+                resultadofinal = num1 - num2;
+
+            }else if(operation == 3){
+                resultadofinal = num1 * num2;
+
+            }else if( operation == 4){
+                if(num2 !=0){
+                    resultadofinal = num1 / num2;
+                }else{
+                    System.out.println("No es posible dividir entre 0 :c");
+                }
+
+            }else{
+                System.out.println("operacion invalida :c");
+            }
+            System.out.println("el rsultado es: " + resultadofinal);
+
         break;
-        
+        case 14:
+        System.out.println("Saliendo del programa...");
+        return;
+
         default:
           
-
+        break;
 
         }
         System.out.println("Deseas repetir el programa escribe s o S para si");
         letrapararepetir = entrada.next().charAt(0);  
-        }while(letrapararepetir != 's' || letrapararepetir == 'S');    
+    }while(letrapararepetir == 's' || letrapararepetir == 'S');
 
 
 
+    }
+    public static int factorial(int n){
+        if(n == 0){
+            return 1;
+        }else{
+            return n *  factorial(n-1);
+        }
     }
 }
