@@ -163,6 +163,9 @@ public class Examen {
                         double descuento = totalConIva * 0.0795;
                         double totalfinal = totalConIva - descuento;
                         
+                        System.out.println("Nombre del cliente: " + nombre + " " + apellidoPaterno + " " + apellidoMaterno);
+                        System.out.println("Fecha de nacimiento: " + fechaNacimiento);
+                        System.out.println("Direccion: " + direccionRecidencial);
                         System.out.println("Descuento: $" + descuento);
                         System.out.println("Total a pagar: $" + totalfinal);
                         System.out.println("Gracias por su compra :3");
