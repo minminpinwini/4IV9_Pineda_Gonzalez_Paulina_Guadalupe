@@ -2,19 +2,19 @@ package herencias;
 
 import java.io.Serializable;
 
-public class Estudiante implements Serializable {
+public class Profesor implements Serializable {
 
     private int id;
     private String nombre;
-    private int edad;
+    private String materia;
 
-    public Estudiante() {
+    public Profesor() {
     }
 
-    public Estudiante(int id, String nombre, int edad) {
+    public Profesor(int id, String nombre, String materia) {
         this.id = id;
         this.nombre = nombre;
-        this.edad = edad;
+        this.materia = materia;
     }
 
     public int getId() {
@@ -33,18 +33,18 @@ public class Estudiante implements Serializable {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
-        return edad;
+    public String getMateria() {
+        return materia;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setMateria(String materia) {
+        this.materia = materia;
     }
 
     @Override
     public String toString() {
         return "ID: " + id +
                "\nNombre: " + nombre +
-               "\nEdad: " + edad;
+               "\nMateria: " + materia;
     }
 }
