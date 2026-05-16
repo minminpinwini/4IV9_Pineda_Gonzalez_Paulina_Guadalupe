@@ -145,7 +145,7 @@ public class Examen {
                         totalBase += costo;
 
                         System.out.println("Area: " + area + "m²");
-                        System.out.println("Costo del cuarto; $" + costo);
+                        System.out.println("Costo del cuarto: $" + costo);
 
 
                     }
